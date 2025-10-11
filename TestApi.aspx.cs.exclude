@@ -1,0 +1,307 @@
+﻿using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Data.SqlClient;
+using System.Configuration;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using System.Security.Cryptography.X509Certificates;
+using System.Collections;
+
+public partial class TestApi : System.Web.UI.Page
+{
+    string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+    string constr1 = ConfigurationManager.ConnectionStrings["constr1"].ConnectionString;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        MakeApiRequest();
+
+    }
+    private static void MakeApiRequest()
+    {
+        string sResult = "";
+        string current_datetime = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+        int random_number = new Random().Next(0, 999);
+        string formatted_datetime = current_datetime + random_number.ToString().PadLeft(3, '0');
+        sResult = formatted_datetime;
+        try
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+            using (var httpClient = new HttpClient())
+            {
+                var hostname = "sbgrewards.io";
+                var referCode = "SBG729763";
+                var password = "GlobalSBG$&98420";
+                var postData = "{\"refer_code\":\"" + referCode + "\",\"password\":\"" + password + "\"}";
+                StringContent content = new StringContent(postData, Encoding.UTF8, "application/json");
+                var byteArray = Encoding.UTF8.GetBytes(postData);
+                var request = new HttpRequestMessage(HttpMethod.Post, "https://sbgrewards.ai/api/sbglogin");
+                request.Headers.Host = hostname;
+                request.Content = content;
+                request.Content.Headers.ContentLength = byteArray.Length;
+                string sql_req = "INSERT INTO Tbl_ApiRequest_ResponseQrCode (ReqID, Formno, Request, postdata, ApiType) ";
+                sql_req += "VALUES ('" + sResult + "', '" + Convert.ToInt32(Session["FormNo"]) + "', 'https://sbgrewards.ai/api/sbglogin', '" + request + "', 'LOGIN')";
+                int x_Req = Convert.ToInt32(SqlHelper.ExecuteNonQuery(ConfigurationManager.ConnectionStrings["constr"].ConnectionString, CommandType.Text, sql_req));
+                var response = httpClient.SendAsync(request).Result;
+                // Log after receiving the response
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = response.Content.ReadAsStringAsync().Result;
+                    string sql_res = "UPDATE Tbl_ApiRequest_ResponseQrCode SET Response = '" + apiResponse.Trim() + "' WHERE ReqID = '" + sResult + "'";
+                    int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(ConfigurationManager.ConnectionStrings["constr"].ConnectionString, CommandType.Text, sql_res));
+                }
+                else
+                {
+                    string sql_res = "UPDATE Tbl_ApiRequest_ResponseQrCode SET Response = '" + response.StatusCode + "' WHERE ReqID = '" + sResult + "'";
+                    int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(ConfigurationManager.ConnectionStrings["constr"].ConnectionString, CommandType.Text, sql_res));
+                }
+            }
+        }
+        catch (HttpRequestException httpEx)
+        {
+            string sql_res = "Update Tbl_ApiRequest_ResponseQrCode  Set Response = '" + httpEx.Message + "' Where ReqID = '" + sResult.Trim() + "' AND ApiType = 'LOGIN'";
+            int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(ConfigurationManager.ConnectionStrings["constr"].ConnectionString, CommandType.Text, sql_res));
+        }
+        catch (Exception ex)
+        {
+            string sql_res = "Update Tbl_ApiRequest_ResponseQrCode  Set Response = '" + ex.Message + "' Where ReqID = '" + sResult.Trim() + "' AND ApiType = 'LOGIN'";
+            int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(ConfigurationManager.ConnectionStrings["constr"].ConnectionString, CommandType.Text, sql_res));
+        }
+    }
+
+    //private async Task MakeHttpRequestAsync()
+    //{
+    //    string sResult = "";
+    //    string current_datetime = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+    //    int random_number = new Random().Next(0, 999);
+    //    string formatted_datetime = current_datetime + random_number.ToString().PadLeft(3, '0');
+    //    sResult = formatted_datetime;
+    //    try
+    //    {
+    //        // Ensure TLS 1.2 is used
+    //        ServicePointManager.Expect100Continue = true;
+    //        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+    //        // Optionally, ignore certificate validation errors (useful for testing, not recommended for production)
+    //        ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+
+    //        using (var httpClient = new HttpClient())
+    //        {
+    //            var hostname = "sbgrewards.io";
+    //            var referCode = "SBG729763";
+    //            var password = "GlobalSBG$&98420";
+
+    //            var postData = "{\"refer_code\":\"" + referCode + "\",\"password\":\"" + password + "\"}";
+
+    //            StringContent content = new StringContent(postData, Encoding.UTF8, "application/json");
+
+    //            // Get the byte array of the content
+    //            var byteArray = Encoding.UTF8.GetBytes(postData);
+
+    //            // Create the HttpRequestMessage and set headers
+    //            var request = new HttpRequestMessage(HttpMethod.Post, "https://sbgrewards.ai/api/sbglogin");
+    //            request.Headers.Host = hostname;
+    //            request.Content = content;
+    //            request.Content.Headers.ContentLength = byteArray.Length;
+
+    //            string sql_req = "INSERT INTO Tbl_ApiRequest_ResponseQrCode (ReqID, Formno, Request, postdata, ApiType) " +
+    //                             "VALUES ('" + sResult + "', '" + Convert.ToInt32(Session["FormNo"]) + "', 'https://sbgrewards.ai/api/sbglogin', '" + postData.Trim() + "', 'LOGIN')";
+    //            int x_Req = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_req));
+
+    //            // Log before sending the request
+    //            Console.WriteLine("Sending request to https://sbgrewards.ai/api/sbglogin");
+    //            var response = httpClient.SendAsync(request);
+
+    //            string sql_res = "UPDATE Tbl_ApiRequest_ResponseQrCode SET Response = '" + response + "' WHERE ReqID = '" + sResult + "'";
+    //            int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_res));
+    //        }
+    //    }
+    //    catch (HttpRequestException httpEx)
+    //    {
+    //        Console.WriteLine("HTTP Request Exception: " + httpEx.Message);
+    //        // Handle HTTP request specific exceptions
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Console.WriteLine("General Exception: " + ex.Message);
+    //        // Handle general exceptions
+    //    }
+
+
+    //    //try
+    //    //{
+    //    //    // Ensure TLS 1.2 is used
+    //    //    ServicePointManager.Expect100Continue = true;
+    //    //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+    //    //    // Optionally, ignore certificate validation errors (useful for testing, not recommended for production)
+    //    //    ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+
+    //    //    using (var httpClient = new HttpClient())
+    //    //    {
+    //    //        var hstname = "sbgrewards.io";
+    //    //        var referCode = "SBG729763";
+    //    //        var password = "GlobalSBG$&98420";
+
+    //    //        var postData = "{\"refer_code\":\"" + referCode + "\",\"password\":\"" + password + "\"}";
+
+    //    //        StringContent content = new StringContent(postData, Encoding.UTF8, "application/json");
+
+    //    //        // Create the HttpRequestMessage and set headers
+    //    //        var request = new HttpRequestMessage(HttpMethod.Post, "https://sbgrewards.ai/api/sbglogin");
+    //    //        request.Headers.Host = hstname;
+    //    //        request.ContentLength = byteArray.Length;
+    //    //        request.Content = content;
+    //    //        string sql_req = "insert Into Tbl_ApiRequest_ResponseQrCode (ReqID, Formno, Request, postdata, ApiType) ";
+    //    //        sql_req += "Values('0','" + Convert.ToInt32(Session["FormNo"]) + "','https://sbgrewards.ai/api/sbglogin','" + postData.Trim() + "','LOGIN')";
+    //    //        int x_Req = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_req));
+    //    //        using (var response = await httpClient.SendAsync(request))
+    //    //        {
+    //    //            string apiResponse = await response.Content.ReadAsStringAsync();
+    //    //            string sql_res = "Update Tbl_ApiRequest_ResponseQrCode Set Response = '" + apiResponse.Trim() + "' ";
+    //    //            int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_res));
+    //    //            // Handle the response as needed
+    //    //        }
+    //    //    }
+    //    //}
+    //    //catch (Exception ex)
+    //    //{
+    //    //    var errorMessage = ex.Message;
+    //    //    // Handle exceptions
+    //    //}
+
+    //    //try
+    //    //{
+    //    //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://sbgrewards.io/api/sbglogin");
+
+    //    //    ServicePointManager.Expect100Continue = true;
+    //    //    ServicePointManager.DefaultConnectionLimit = 9999;
+    //    //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+
+    //    //    var referCode = "SBG729763";
+    //    //    var password = "GlobalSBG$&98420";
+    //    //    // var request = (HttpWebRequest)WebRequest.Create("https://sbgrewards.io/api/sbglogin");
+
+    //    //    var postData = "{\"refer_code\":\"" + referCode + "\",\"password\":\"" + password + "\"}";
+    //    //    var data = Encoding.ASCII.GetBytes(postData);
+
+    //    //    request.Method = "POST";
+    //    //    request.ContentType = "application/json";
+    //    //    request.ContentLength = data.Length;
+    //    //    request.Host = "sbgrewards.io"; // Set the Host property
+
+    //    //    using (var stream = request.GetRequestStream())
+    //    //    {
+    //    //        stream.Write(data, 0, data.Length);
+    //    //    }
+
+    //    //    var response = (HttpWebResponse)request.GetResponse();
+    //    //    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+    //    //    Console.WriteLine(responseString); // Log the response for debugging
+    //    //}
+    //    //catch (WebException webEx)
+    //    //{
+    //    //    var httpResponse = webEx.Response as HttpWebResponse;
+    //    //    if (httpResponse != null)
+    //    //    {
+    //    //        Console.WriteLine($"HTTP Status: {httpResponse.StatusCode}, Description: {httpResponse.StatusDescription}");
+    //    //    }
+    //    //    else
+    //    //    {
+    //    //        Console.WriteLine($"WebException: {webEx.Message}");
+    //    //    }
+    //    //}
+    //    //catch (Exception ex)
+    //    //{
+    //    //    Console.WriteLine("Exception: " + ex.Message);
+    //    //}
+
+
+
+    //}
+
+    //protected void Page_Load(object sender, EventArgs e)
+    //{
+    //    string sResult = "";
+    //    string current_datetime = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+    //    int random_number = new Random().Next(0, 999);
+    //    string formatted_datetime = current_datetime + random_number.ToString().PadLeft(3, '0');
+    //    sResult = formatted_datetime;
+    //    string str = "";
+    //    string statusApi = "";
+    //    int Result_RR = 0;
+    //    DataTable dsLoginTo_Address = new DataTable();
+    //    string To_WalletAddress = "";
+    //    decimal value = 0;
+    //    DataSet data = new DataSet();
+    //    try
+    //    {
+    //        ServicePointManager.Expect100Continue = true;
+    //        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+
+    //        // Optionally bypass certificate validation (for testing only, not recommended for production)
+    //        ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
+    //        string URL = "https://sbgrewards.io/api/sbglogin";
+    //        HttpWebRequest tRequest = (HttpWebRequest)WebRequest.Create(URL);
+    //        tRequest.Method = "POST";
+    //        tRequest.ContentType = "application/json";
+    //        tRequest.Host = "sbgrewards.io"; // Set the Host header using the Host property
+
+    //        string postData = "{\"refer_code\":\"SBG729763\",\"password\":\"GlobalSBG$&98420\"}";
+    //        byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+    //        //string sql_req = "insert Into Tbl_ApiRequest_ResponseQrCode (ReqID, Formno, Request, postdata, ApiType) ";
+    //        //sql_req += "Values('" + sResult.Trim() + "','" + Convert.ToInt32(Session["FormNo"]) + "','" + URL.Trim() + "','" + postData.Trim() + "','LOGIN')";
+
+    //        //int x_Req = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_req));
+    //        tRequest.ContentLength = byteArray.Length;
+    //        using (Stream dataStream = tRequest.GetRequestStream())
+    //        {
+    //            dataStream.Write(byteArray, 0, byteArray.Length);
+    //        }
+
+    //        using (WebResponse tResponse = tRequest.GetResponse())
+    //        {
+    //            using (Stream dataStream = tResponse.GetResponseStream())
+    //            {
+    //                using (StreamReader tReader = new StreamReader(dataStream))
+    //                {
+    //                    str = tReader.ReadToEnd();
+    //                }
+    //            }
+    //        }
+
+    //        string sql_res = "Update Tbl_ApiRequest_ResponseQrCode Set Response = '" + str.Trim() + "' Where ReqID = '" + sResult.Trim() + "' AND ApiType = 'LOGIN'";
+    //        //int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_res));
+    //        string json = str;
+    //        string strs = "";
+    //        double originalValue = 0;
+    //        decimal Final_Amount = 0;
+    //        decimal AcurateTotalAmount = 0;
+    //        string Hash = "";
+    //        string ContractAddress = "";
+    //        string From_WalletAddress = "";
+    //        string Str_Check = "";
+    //        DataTable dt_Check = new DataTable();
+    //        // DataSet data = ConvertJsonStringToDataSet(str.ToString());
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        string sql_res = "Update Tbl_ApiRequest_ResponseQrCode Set Response = '" + ex.Message + "' Where ReqID = '" + sResult.Trim() + "' AND ApiType = 'LOGIN'";
+    //        //int x_res = Convert.ToInt32(SqlHelper.ExecuteNonQuery(constr, CommandType.Text, sql_res));
+    //    }
+
+    //}
+}
