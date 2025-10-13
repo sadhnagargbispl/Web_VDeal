@@ -1,0 +1,142 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|e:\\sadhna garg\\githubc#\\web_vdeal\\index.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|solutionrelative:index.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|e:\\sadhna garg\\githubc#\\web_vdeal\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|e:\\sadhna garg\\githubc#\\web_vdeal\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|e:\\sadhna garg\\githubc#\\web_vdeal\\fundrequestreport.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|solutionrelative:fundrequestreport.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|e:\\sadhna garg\\githubc#\\web_vdeal\\fundrequest.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|solutionrelative:fundrequest.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|e:\\sadhna garg\\githubc#\\web_vdeal\\activation.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F8A3A0-0689-4754-9FB9-47566FFB61B7}|E:\\Sadhna Garg\\GitHubC#\\Web_VDeal|solutionrelative:activation.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.aspx.cs",
+              "DocumentMoniker": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\index.aspx.cs",
+              "RelativeDocumentMoniker": "index.aspx.cs",
+              "ToolTip": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\index.aspx.cs",
+              "RelativeToolTip": "index.aspx.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAjwBoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T06:54:02.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Login.aspx.cs",
+              "ToolTip": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\Login.aspx.cs",
+              "RelativeToolTip": "Login.aspx.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAFYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T06:47:37.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FundRequestReport.aspx",
+              "DocumentMoniker": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\FundRequestReport.aspx",
+              "RelativeDocumentMoniker": "FundRequestReport.aspx",
+              "ToolTip": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\FundRequestReport.aspx",
+              "RelativeToolTip": "FundRequestReport.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-13T06:44:24.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FundRequest.aspx.cs",
+              "DocumentMoniker": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\FundRequest.aspx.cs",
+              "RelativeDocumentMoniker": "FundRequest.aspx.cs",
+              "ToolTip": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\FundRequest.aspx.cs",
+              "RelativeToolTip": "FundRequest.aspx.cs",
+              "ViewState": "AgIAAKwBAAAAAAAAAAAAAMIBAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T06:43:08.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Activation.aspx.cs",
+              "DocumentMoniker": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\Activation.aspx.cs",
+              "RelativeDocumentMoniker": "Activation.aspx.cs",
+              "ToolTip": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\Activation.aspx.cs",
+              "RelativeToolTip": "Activation.aspx.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAIUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T06:09:43.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "E:\\Sadhna Garg\\GitHubC#\\Web_VDeal\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-13T05:54:21.515Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
