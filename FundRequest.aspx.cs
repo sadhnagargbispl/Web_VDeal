@@ -448,7 +448,7 @@ public partial class FundRequest : System.Web.UI.Page
                         string str = "INSERT INTO WalletReq(ReqNo,ReqDate,Formno,PID,Paymode,Amount,ChqNo,ChqDate,BankName,BranchName,ScannedFile,Remarks,BankId,Transno) " +
          " " + "Select ISNULL(Max(ReqNo)+1,'1001'),'" + DateTime.Now.ToString("dd-MMM-yyyy").ToString() + "'," +
          "'" + Session["Formno"].ToString() + "','" + DdlPaymode.SelectedValue + "','" + DdlPaymode.SelectedItem.Text + "','" + TxtAmount.Text + "'," +
-         "'" + TxtDDNo.Text + "','" + ChqDate.ToString() + "','','','" + FlNm + "','','0','0' FROM WalletReq " + "; " +
+         "'" + TxtDDNo.Text + "','" + DateTime.Now.ToString("dd-MMM-yyyy").ToString() + "','','','" + FlNm + "','','0','0' FROM WalletReq " + "; " +
      "Insert into UserHistory(UserId,UserName,PageName,Activity,ModifiedFlds,RecTimeStamp,MemberId) " +
      " Values" + "('" + Session["FormNo"] + "','" + Session["MemName"] + "','Payment Request','Payment Request', " +
      "'Amount: " + TxtAmount.Text + "',Getdate()," + Session["FormNo"] + ")";

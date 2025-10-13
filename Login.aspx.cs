@@ -84,6 +84,10 @@ public partial class Login : System.Web.UI.Page
                     uid = uid.Trim().Replace("'", "").Replace("=", "").Replace(";", "");
                     Pwd = Pwd.Trim().Replace("'", "").Replace("=", "").Replace(";", "");
                 }
+                if (!string.IsNullOrEmpty(uid) && !string.IsNullOrEmpty(Pwd))
+                {
+                    enterHomePg();
+                }
             }
         }
         catch (Exception ex)

@@ -50,7 +50,7 @@
                                                 <%#Eval("ChequeDate") %>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Bank Name">
+                                       <%-- <asp:TemplateField HeaderText="Bank Name">
                                             <ItemTemplate>
                                                 <%# Eval("BankName") %>
                                             </ItemTemplate>
@@ -59,7 +59,7 @@
                                             <ItemTemplate>
                                                 <%# Eval("BranchName") %>
                                             </ItemTemplate>
-                                        </asp:TemplateField>
+                                        </asp:TemplateField>--%>
                                         <asp:TemplateField HeaderText="Amount">
                                             <ItemTemplate>
                                                 <%# Eval("Amount") %>
