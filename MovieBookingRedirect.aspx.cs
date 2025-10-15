@@ -31,12 +31,12 @@ public partial class MovieBookingRedirect : System.Web.UI.Page
                 string userInfo;
                 userInfo = Dt.Rows[0]["Idno"].ToString().Trim() + ";" + Dt.Rows[0]["Passw"].ToString() + ";" + Dt.Rows[0]["Name"].ToString().Trim() + ";" + Dt.Rows[0]["Email"].ToString().Trim() + ";" + Dt.Rows[0]["Mobl"].ToString().Trim() + ";" + Convert.ToDateTime(Dt.Rows[0]["doj"]).ToString("dd-MMM-yyyy");
                 string encryptedUserInfo = EncryptData(userInfo);
-                string url = "https://movie.joshmart.ai/controller.aspx?user_info=" + encryptedUserInfo + "&log_key=112442F9-4E1F-4C3A-A8AF-E161D13F4F63";
+                string url = "https://movie.vdeal.in/controller.aspx?user_info=" + encryptedUserInfo + "&log_key=AB7B4CD2-40E6-45CD-BF14-7F29A38F5FA8";
                 Response.Redirect(url);
             }
             else
             {
-                Response.Redirect("https://movie.joshmart.ai/");
+                Response.Redirect("https://movie.vdeal.in/");
             }
         }
         catch (Exception ex)

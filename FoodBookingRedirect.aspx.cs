@@ -16,21 +16,20 @@ public partial class FoodBookingRedirect : System.Web.UI.Page
     {
         try
         {
-            string Str = "";
-            Str = " select *,(MemFirstname+' '+MemLastname) as Name from M_memberMaster where Formno = '" + Convert.ToInt32(Session["formno"]) + "'";
+            string Str = "SELECT *, (MemFirstname + ' ' + MemLastname) AS Name FROM M_memberMaster WHERE Formno = '" + Convert.ToInt32(Session["formno"]) + "'";
             DataTable Dt = new DataTable();
             Dt = SqlHelper.ExecuteDataset(constr, CommandType.Text, Str).Tables[0];
             if (Dt.Rows.Count > 0)
             {
-                string stri;
-                stri = Dt.Rows[0]["Idno"].ToString().Trim() + ";" + Dt.Rows[0]["Passw"].ToString() + ";" + Dt.Rows[0]["Name"].ToString().Trim() + ";" + Dt.Rows[0]["Email"].ToString().Trim() + ";" + Dt.Rows[0]["Mobl"].ToString().Trim() + ";" + Convert.ToDateTime(Dt.Rows[0]["doj"]).ToString("dd-MMM-yyyy");
-                string qr = EncryptData(stri);
-                string Url = "https://food.joshmart.ai/controller.aspx?user_info=" + qr + "&log_key=1523F2DF-2637-4BA1-A220-8497BBDD46B7";
-                Response.Redirect(Url);
+                string userInfo;
+                userInfo = Dt.Rows[0]["Idno"].ToString().Trim() + ";" + Dt.Rows[0]["Passw"].ToString();
+                string encryptedUserInfo = EncryptData(userInfo);
+                string url = "https://food.vdeal.in/controller.aspx?user_info=" + encryptedUserInfo + "&log_key=749518F8-6DDA-4AAE-9A02-A0EE820E636F";
+                Response.Redirect(url);
             }
             else
             {
-                Response.Redirect("https://food.joshmart.ai/");
+                Response.Redirect("https://food.vdeal.in/");
             }
         }
         catch (Exception ex)

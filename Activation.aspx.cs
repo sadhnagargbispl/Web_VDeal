@@ -139,7 +139,7 @@ public partial class Activation : System.Web.UI.Page
                 {
                     LblFoodDis.Text = ds.Tables[0].Rows[0]["Dis"].ToString();
                     LblFoodUse.Text = ds.Tables[0].Rows[0]["Uses"].ToString();
-                    lblhowtouse.Text = ds.Tables[0].Rows[0]["Howtouse"].ToString();
+                    //lblhowtouse.Text = ds.Tables[0].Rows[0]["Howtouse"].ToString();
                     LblFoodTerms.Text = ds.Tables[0].Rows[0]["Trmscon"].ToString();
                     DivMDescription_Food.Visible = true;
                 }

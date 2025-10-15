@@ -87,9 +87,9 @@
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" href="#how" aria-controls="how" role="tab" data-toggle="tab">How to Use</a>
                         </li>
-                        <li class="nav-item" role="presentation">
+                      <%--  <li class="nav-item" role="presentation">
                             <a class="nav-link" href="#rupay" aria-controls="rupay" role="tab" data-toggle="tab">How to use Rupay Card?</a>
-                        </li>
+                        </li>--%>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" href="#terms" aria-controls="terms" role="tab" data-toggle="tab">Terms & Conditions</a>
                         </li>
@@ -106,11 +106,11 @@
                                 <asp:Label ID="LblFoodUse" runat="server" Text="Label"></asp:Label>
                             </p>
                         </div>
-                        <div id="rupay" class="tab-pane" role="tabpanel">
+                     <%--   <div id="rupay" class="tab-pane" role="tabpanel">
                             <p>
                                 <asp:Label ID="lblhowtouse" runat="server" Text=""></asp:Label>
                             </p>
-                        </div>
+                        </div>--%>
                         <div id="terms" class="tab-pane" role="tabpanel">
                             <asp:Label ID="LblFoodTerms" runat="server" Text="Label"></asp:Label>
                         </div>

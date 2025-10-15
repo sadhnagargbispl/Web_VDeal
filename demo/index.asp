@@ -54,8 +54,8 @@
                   <h5 class="text-uppercase"> Food Orders  </h5>
                   <p class="mb-0 text-dark"> Order your favorite meals online and <br> enjoy doorstep delivery. </p>
                   <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://food.vdeal.in" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://food.vdeal.in" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="FoodBookingRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="FoodBookingRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>
@@ -67,8 +67,8 @@
                   <h5 class="text-uppercase"> Movie Tickets </h5>
                   <p class="mb-0 text-dark"> Book movie tickets instantly and <br> skip the queue. </p>
                   <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://movie.vdeal.in" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://movie.vdeal.in" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="MovieBookingRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="MovieBookingRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>
@@ -81,8 +81,8 @@
                   <h5 class="text-uppercase"> Holiday Booking </h5>
                   <p class="mb-0 text-dark"> Plan your dream vacation with easy <br> online holiday bookings. </p>
                   <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://holiday.vdeal.in/" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://holiday.vdeal.in/" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="HolidayPortalRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="HolidayPortalRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>
@@ -96,8 +96,8 @@
                   <h5 class="text-uppercase"> Utility Services  </h5>
                   <p class="mb-0 text-dark"> Pay all your bills quickly and <br> securely in one place. </p>
                   <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://utility.vdeal.in/" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://utility.vdeal.in/" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="UtilityServicesRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="UtilityServicesRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>
@@ -110,8 +110,8 @@
                   <h5 class="text-uppercase"> Gift Voucher </h5>
                   <p class="mb-0 text-dark"> Surprise your loved ones with digital <br> gift vouchers for any occasion. </p>
                   <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://gv.vdeal.in/" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://gv.vdeal.in/" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="GiftVoucherRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="GiftVoucherRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>
@@ -124,8 +124,8 @@
                  <h5 class="text-uppercase"> Online Store </h5>
                  <p class="mb-0 text-dark"> Shop everything you need from our <br>trusted online marketplace. </p>
                  <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://store.vdeal.in" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://store.vdeal.in" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="OnlineStoreRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="OnlineStoreRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>
@@ -138,8 +138,8 @@
                 <h5 class="text-uppercase"> Brand Products  </h5>
                 <p class="mb-0 text-dark"> Explore top-quality brand products at <br> unbeatable prices. </p>
                 <a href="product-packages.asp"><button class="btn-danger mt-2 p-1"> Packages </button></a>
-                  <a href="https://brands.vdeal.in" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
-                  <a href="https://brands.vdeal.in" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
+                  <a href="OnLineShoppingRedirect.aspx" target="_blank"><button class="btn-info mt-2 p-1"> View Website </button></a>
+                  <a href="OnLineShoppingRedirect.aspx" target="_blank"><button class="btn-danger mt-2 p-1"> Redeem </button></a>
                 </div>
               </div>
             </div>

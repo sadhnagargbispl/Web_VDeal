@@ -20,7 +20,7 @@ public partial class OnlineStoreRedirect : System.Web.UI.Page
         {
             if (Session["IDNO"] == null)
             {
-                Response.Redirect("https://store.joshmart.ai/");
+                Response.Redirect("https://store.vdeal.in/");
             }
             else
             {
@@ -29,11 +29,10 @@ public partial class OnlineStoreRedirect : System.Web.UI.Page
                     string formPostText = string.Empty;
                     string UserName = Encrypt(Session["IDNO"].ToString());
                     string Password = Encrypt(Session["MemPassw"].ToString());
-
-                    formPostText = "<form method=\"POST\" action=\"https://store.joshmart.ai/Account/DirectLogin\" name=\"frm2Post\">" +
+                    formPostText = "<form method=\"POST\" action=\"https://store.vdeal.in/Account/DirectLogin\" name=\"frm2Post\">" +
                                    " <input type=\"hidden\" name=\"LoginId\" value=\"" + UserName + "\" />" +
                                    " <input type=\"hidden\" name=\"Password\" value=\"" + Password + "\" /> " +
-                                   " <input type=\"hidden\" name=\"Token\" value=\"aMogVqwfBLFntHkVxMGj7KoK5jha/7tVa+vM6TTn+YyuwOB2mI9XqVp8PYKWkspI\" />" +
+                                   " <input type=\"hidden\" name=\"Token\" value=\"GfVjMBfHwAZvdLRGt/mXqhk6Vt3ZtRlqov7gponpULRsz68olfc+XFjRH8VeUDRy\" />" +
                                    " <script type=\"text/javascript\">document.frm2Post.submit();</script></form>";
 
                     Response.Write(formPostText);
@@ -52,7 +51,7 @@ public partial class OnlineStoreRedirect : System.Web.UI.Page
     }
     public string Encrypt(string plainText)
     {
-        string completeUrl = "https://store.joshmart.ai/Account/Encrypt?plainText=" + plainText;
+        string completeUrl = "https://store.vdeal.in/Account/Encrypt?plainText=" + plainText;
         string customerOTPmessage = string.Empty;
         string amount = string.Empty;
 

@@ -17,14 +17,14 @@ public partial class HolidayPortalRedirect : System.Web.UI.Page
         {
             if (Session["IDNO"] == null)
             {
-                Response.Redirect("https://holiday.joshmart.ai/");
+                Response.Redirect("https://holiday.vdeal.in/");
             }
             else
             {
-                string Token = "QzVENTAyQUItNTZGMC00NjhDLUFDMjItQTE0REU2RTQzM0VC";
+                string Token = "A75AFBA0292C4AE59DFD7D56F96C8B06";
                 string info12 = "UserName=" + Convert.ToString(Session["IDNO"]) + "&Password=" + Convert.ToString(Session["MemPassw"]) + "&Action=Login" + "&Token=" + Token;
                 string refes = Base64Encode(info12);
-                string Url = "https://holiday.joshmart.ai/Account/DirectLogin?URL=" + refes;
+                string Url = "https://holiday.vdeal.in/Account/DirectLogin?URL=" + refes;
                 Response.Redirect(Url);
             }
         }

@@ -17,14 +17,14 @@ public partial class UtilityServicesRedirect : System.Web.UI.Page
         {
             if (Session["IDNO"] == null)
             {
-                Response.Redirect("https://utility.joshmart.ai/");
+                Response.Redirect("https://utility.vdeal.in/");
             }
             else
             {
-                string Token = "ODJBMjNFQkQtMjcxNC00REQyLUIwRDAt";
+                string Token = "4168AEB2C11D4713A19EC1A85DE450EC";
                 string info12 = "UserName=" + Session["IDNO"].ToString() + "&Password=" + Session["MemPassw"].ToString() + "&Action=Login&Token=" + Token;
                 string refes = Base64Encode(info12);
-                string Url = "https://utility.joshmart.ai/handler/login.ashx?url=" + refes;
+                string Url = "https://utility.vdeal.in/handler/login.ashx?url=" + refes;
                 Response.Redirect(Url);
             }
         }

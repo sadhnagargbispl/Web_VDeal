@@ -17,13 +17,13 @@ public partial class OnLineShoppingRedirect : System.Web.UI.Page
         {
             if (Session["IDNO"] == null)
             {
-                Response.Redirect("https://shop.joshmart.ai/");
+                Response.Redirect("https://brands.vdeal.in/");
             }
             else
             {
                 string formPostText = "";
-                formPostText = "<form method=\"POST\" action=\"https://shop.joshmart.ai/members/index.php\" name=\"frm2Post\">";
-                formPostText += "<input type=\"hidden\" name=\"token\" value=\"89ca55cc2a1aee9acad04743c07b638c\" />";
+                formPostText = "<form method=\"POST\" action=\"https://brands.vdeal.in/members/index.php\" name=\"frm2Post\">";
+                formPostText += "<input type=\"hidden\" name=\"token\" value=\"460673b7c80c4d29c61dfea0d82c401a\" />";
                 formPostText += "<input type=\"hidden\" name=\"mod\" value=\"interLogin\" />";
                 formPostText += "<input type=\"hidden\" name=\"userid\" value=\"" + Session["IDNO"].ToString() + "\" />";
                 formPostText += "<input type=\"hidden\" name=\"password\" value=\"" + Session["MemPassw"].ToString() + "\" /> ";

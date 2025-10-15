@@ -17,7 +17,7 @@ public partial class GiftVoucherRedirect : System.Web.UI.Page
         {
             if (Session["IDNO"] == null)
             {
-                Response.Redirect("https://gv.joshmart.ai/index.php");
+                Response.Redirect("https://gv.vdeal.in/index.php");
             }
             else
             {
@@ -25,11 +25,11 @@ public partial class GiftVoucherRedirect : System.Web.UI.Page
                 //string info12 = "UserName=" + Convert.ToString(Session["IDNO"]) + "&Password=" + Convert.ToString(Session["MemPassw"]) + "&Action=Login" + "&Token=" + Token;
                 //string refes = Base64Encode(info12);
                 //string data = Base64Decode(refes);
-                //Response.Redirect("http://gv.joshmart.ai/Login/DirectLogin?URL=" + refes);
+                //Response.Redirect("http://gv.vdeal.in/Login/DirectLogin?URL=" + refes);
 
                 string formPostText = "";
-                formPostText = "<form method=\"POST\" action=\"https://gv.joshmart.ai/members/index.php\" name=\"frm2Post\">";
-                formPostText += "<input type=\"hidden\" name=\"token\" value=\"03789e777ce4968dd7ad963d4af7d5a3\" />";
+                formPostText = "<form method=\"POST\" action=\"https://gv.vdeal.in/members/index.php\" name=\"frm2Post\">";
+                formPostText += "<input type=\"hidden\" name=\"token\" value=\"aef26b5beff2beb16d88f6530578d518\" />";
                 formPostText += "<input type=\"hidden\" name=\"mod\" value=\"interLogin\" />";
                 formPostText += "<input type=\"hidden\" name=\"userid\" value=\"" + Session["IDNO"].ToString() + "\" />";
                 formPostText += "<input type=\"hidden\" name=\"password\" value=\"" + Session["MemPassw"].ToString() + "\" /> ";

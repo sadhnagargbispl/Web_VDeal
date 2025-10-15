@@ -23,13 +23,13 @@
                  <nav id="mobile-menu">
               <ul class="list-unstyled mb-0">
                 <li><a class="text-uppercase" href="aboutus.asp">About Us</a></li>
-                <li><a class="text-uppercase" href="https://food.vdeal.in" target="_blank">Food</a></li>
-                <li><a class="text-uppercase" href="https://movie.vdeal.in" target="_blank">Movie</a></li>
-                <li><a class="text-uppercase" href="https://holiday.vdeal.in/" target="_blank">Holiday</a></li>
-                <li><a class="text-uppercase" href="https://utility.vdeal.in/" target="_blank">Utility</a></li>
-                <li><a class="text-uppercase" href="https://gv.vdeal.in/" target="_blank">Gift Voucher</a></li>
-                <li><a class="text-uppercase" href="https://store.vdeal.in" target="_blank">Online Store</a></li>
-                <li><a class="text-uppercase" href="https://brands.vdeal.in" target="_blank">Brand Products</a></li>
+                <li><a class="text-uppercase" href="FoodBookingRedirect.aspx" target="_blank">Food</a></li>
+                <li><a class="text-uppercase" href="MovieBookingRedirect.aspx" target="_blank">Movie</a></li>
+                <li><a class="text-uppercase" href="HolidayPortalRedirect.aspx" target="_blank">Holiday</a></li>
+                <li><a class="text-uppercase" href="UtilityServicesRedirect.aspx" target="_blank">Utility</a></li>
+                <li><a class="text-uppercase" href="GiftVoucherRedirect.aspx" target="_blank">Gift Voucher</a></li>
+                <li><a class="text-uppercase" href="OnlineStoreRedirect.aspx" target="_blank">Online Store</a></li>
+                <li><a class="text-uppercase" href="OnLineShoppingRedirect.aspx" target="_blank">Brand Products</a></li>
     
    <li class="dropdown ">
   <a class="dropdown-toggle text-uppercase" href="#" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
