@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group mt-2">
-                            <label>Wallet Balance :</label>
+                            <label>Point Wallet Balance :</label>
                             <asp:TextBox ID="LblGiftWalletBala" runat="server" class="form-control" aria-describedby="emailHelp"
                                 ReadOnly="true"></asp:TextBox>
                         </div>

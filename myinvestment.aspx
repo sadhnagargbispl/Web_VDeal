@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="MyPurchase.aspx.cs" Inherits="MyPurchase" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="myinvestment.aspx.cs" Inherits="myinvestment" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
@@ -18,7 +19,7 @@
                 <!-- Product Info -->
                 <div class="col-xl-12 col-lg-12">
                     <div class="product-info">
-                        <h4 class="text-dark">My Orders</h> 
+                        <h4 class="text-dark">My Purchase Detail</h> 
             <hr class="m-2">
                             <div class="table-responsive">
                                 <asp:UpdatePanel ID="UpdatePanel7" runat="server">

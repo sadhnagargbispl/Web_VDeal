@@ -59,8 +59,6 @@ public partial class Activation : System.Web.UI.Page
                 Session["OTP_"] = null;
                 HdnCheckTrnns.Value = GenerateRandomStringactive(6);
                 FillKit(kitid_);
-                //string kitidString = Request["kitid"];
-                // FillKit(kitid_);
                 string kitidString = kitid_;
                 int kitid;
                 if (int.TryParse(kitidString, out kitid))
@@ -163,7 +161,7 @@ public partial class Activation : System.Web.UI.Page
         try
         {
             DataTable dt = new DataTable();
-            string str = " Select * From dbo.ufnGetBalance('" + Convert.ToInt32(Session["Formno"]) + "','R')";
+            string str = " Select * From dbo.ufnGetBalance('" + Convert.ToInt32(Session["Formno"]) + "','P')";
             dt = SqlHelper.ExecuteDataset(constr, CommandType.Text, str).Tables[0];
             if (dt.Rows.Count > 0)
             {
@@ -465,9 +463,7 @@ Sql,
                     "where ActiveStatus = 'Y' and Rowstatus = 'Y' " +
                     "and KitAmount > 0 and TopupSeq > " + newTopUpSeq +
                     " Order By KitId";
-            DataTable dtKit11 = SqlHelper.ExecuteDataset(
-            ConfigurationManager.ConnectionStrings["constr1"].ConnectionString,
-            CommandType.Text, query).Tables[0];
+            DataTable dtKit11 = SqlHelper.ExecuteDataset(ConfigurationManager.ConnectionStrings["constr1"].ConnectionString, CommandType.Text, query).Tables[0];
             if (dtKit11.Rows.Count > 0)
             {
                 int Kitid = Convert.ToInt32(dtKit11.Rows[0]["KitId"]);
@@ -479,17 +475,26 @@ Sql,
                 //DataTable dtKit111 = SqlHelper.ExecuteDataset(
                 //ConfigurationManager.ConnectionStrings["constr1"].ConnectionString,
                 //CommandType.Text, query1).Tables[0];
-                if (Kitid == Convert.ToInt32(kitid_))
+                if (newTopUpSeq != 0)
+                {
+                    if (Kitid == Convert.ToInt32(kitid_))
+                    {
+                        Msg = "OK";
+                        return true;
+                    }
+                    else
+                    {
+                        Msg = "You have already taken this Package. Please choose a higher Package to upgrade.";
+                        return false;
+                    }
+                }
+                else
                 {
                     Msg = "OK";
                     return true;
                 }
-                else
-                {
-                    Msg = "You have already taken this Package. Please choose a higher Package to upgrade.";
-                    return false;
-                }
-               
+
+
 
             }
             else
@@ -613,19 +618,20 @@ Sql,
             DataTable dts = SqlHelper.ExecuteDataset(ConfigurationManager.ConnectionStrings["constr1"].ConnectionString, CommandType.Text, str).Tables[0];
             if (dts.Rows.Count > 0)
             {
-                if (IsValidID(Session["formno"].ToString(), TxtAmount.Text, out string msg))
-                {
-                    if (msg.ToUpper() == "OK")
-                    {
-                        IdActivation();
-                    }
-                }
-                else
-                {
-                    string scrName = "<SCRIPT language='javascript'>alert('" + msg + "');</SCRIPT>";
-                    ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "Upgraded", scrName, false);
-                    return;
-                }
+                IdActivation();
+                //if (IsValidID(Session["formno"].ToString(), TxtAmount.Text, out string msg))
+                //{
+                //    if (msg.ToUpper() == "OK")
+                //    {
+
+                //    }
+                //}
+                //else
+                //{
+                //    string scrName = "<SCRIPT language='javascript'>alert('" + msg + "');</SCRIPT>";
+                //    ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "Upgraded", scrName, false);
+                //    return;
+                //}
             }
             else
             {
