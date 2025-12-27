@@ -121,7 +121,7 @@
                                                     </li>
                                                     <li><a class="dropdown-item text-dark" href="MainAccountRedirect.aspx"><i class="fa fa-sign-in me-2" aria-hidden="true"></i>My Account</a></li>
                                                     <li><a class="dropdown-item text-dark" href="IdActivation.aspx">Id Activation</a></li>
-                                                    <li><a class="dropdown-item text-dark" href="myinvestment.aspx">My Investment</a></li>
+                                                    <li><a class="dropdown-item text-dark" href="myinvestment.aspx">My Activation</a></li>
                                                     <li><a class="dropdown-item text-dark" href="MyPurchase.aspx">My Purchase Detail</a></li>
                                                     <li><a class="dropdown-item text-dark" href="FundRequest.aspx">Fund Request</a></li>
                                                     <li><a class="dropdown-item text-dark" href="FundRequestReport.aspx">Fund Request Report</a></li>

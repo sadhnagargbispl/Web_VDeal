@@ -90,15 +90,10 @@ partial class Registartion : System.Web.UI.Page
                 FindSession();
                 FillStateMaster();
                 FillCountryMasterNAme();
-                int LegNo = 1;
-                // txtRefralId.Text = Session("Idno")
-
-                if (LegNo == 1)
-                    RbtnLegNo.SelectedIndex = 0;
-                else
-                    RbtnLegNo.SelectedIndex = 1;
-                RbtnLegNo.Enabled = false;
-                Session["iLeg"] = LegNo;
+                RbtnLegNo.Items.Add("Left");
+                RbtnLegNo.Items.Add("Right");
+                RbtnLegNo.Items[0].Selected = true;
+                
             }
             if (Request["ref"] != null)
             {
@@ -114,6 +109,15 @@ partial class Registartion : System.Web.UI.Page
                             RbtnLegNo.SelectedIndex = 0;
                             RbtnLegNo.Enabled = false;
                         TxtSponsorid.ReadOnly = true;
+                        int LegNo = 1;
+                        // txtRefralId.Text = Session("Idno")
+
+                        if (LegNo == 1)
+                            RbtnLegNo.SelectedIndex = 0;
+                        else
+                            RbtnLegNo.SelectedIndex = 1;
+                        RbtnLegNo.Enabled = false;
+                        Session["iLeg"] = LegNo;
                         //goto refLink;
                         FillReferral(ref cnn);
                     }
@@ -124,6 +128,15 @@ partial class Registartion : System.Web.UI.Page
                             RbtnLegNo.SelectedIndex = 0;
                             RbtnLegNo.Enabled = false;
                         TxtSponsorid.ReadOnly = true;
+                        int LegNo = 1;
+                        // txtRefralId.Text = Session("Idno")
+
+                        if (LegNo == 1)
+                            RbtnLegNo.SelectedIndex = 0;
+                        else
+                            RbtnLegNo.SelectedIndex = 1;
+                        RbtnLegNo.Enabled = false;
+                        Session["iLeg"] = LegNo;
                         //goto refLink;
                         FillReferral(ref cnn);
                     }
@@ -133,6 +146,15 @@ partial class Registartion : System.Web.UI.Page
                             RbtnLegNo.SelectedIndex = 1;
                             RbtnLegNo.Enabled = false;
                         TxtSponsorid.ReadOnly = true;
+                        int LegNo = 1;
+                        // txtRefralId.Text = Session("Idno")
+
+                        if (LegNo == 1)
+                            RbtnLegNo.SelectedIndex = 0;
+                        else
+                            RbtnLegNo.SelectedIndex = 1;
+                        RbtnLegNo.Enabled = false;
+                        Session["iLeg"] = LegNo;
                         //goto refLink;
                         FillReferral(ref cnn);
                     }
@@ -298,6 +320,30 @@ partial class Registartion : System.Web.UI.Page
                     if (Validt_SpnsrDtl("") == "OK")
                     {
                         iLeg = Convert.ToInt32(Session["iLeg"]);
+                        if (RbtnLegNo.SelectedIndex == 0)
+                        {
+                            iLeg = 1;
+                        }
+                        else if (RbtnLegNo.SelectedIndex == 1)
+                        {
+                            iLeg = 2;
+                        }
+                        else
+                        {
+                            chkterms.Checked = false;
+                            string scrname = "<script language='javascript'>alert('Choose Position.');</script>";
+
+                            ScriptManager.RegisterClientScriptBlock(
+                                this.Page,
+                                this.Page.GetType(),
+                                "alert",
+                                "alert('Choose Position.');",
+                                true
+                            );
+
+                            RbtnLegNo.Enabled = true;
+                            return;
+                        }
                         string s1 = "";
                      
                         string q = "";

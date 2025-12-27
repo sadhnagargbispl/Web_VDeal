@@ -82,13 +82,18 @@
                                     </div>
                                     <asp:Label ID="lblRefralNm" ForeColor="#D11F7B" runat="server"></asp:Label>
                                 </div>
+                                <div class="mb-3" runat="server" id="DivLeg1">
+                                    <label class="form-label fw-bold">Leg<span style="color: Red; font-size: large; font-weight: bold;">*</span></label>
+                                    <div class="input-group">
+                                        <asp:RadioButtonList ID="RbtnLegNo" runat="server" TabIndex="3" RepeatDirection="Horizontal"
+                                            Style="width: 150px" />
+                                    </div>
 
-                                <div class="form-group greybt" runat="server" id="DivLeg1" style="display: none">
+                                </div>
+                                <div class="form-group greybt"  style="display: none">
                                     <label class="control-label col-sm-2">
                                         Leg<span class="red">*</span></label>
                                     <div class="col-sm-10">
-                                        <asp:RadioButtonList ID="RbtnLegNo" runat="server" TabIndex="3" RepeatDirection="Horizontal"
-                                            Style="width: 150px" />
                                     </div>
                                     <label>
                                         Country Name<span class="red">*</span>
